@@ -1,6 +1,6 @@
 # relab-core
 
-## description
+## 介绍
 
 `relab-core` 是整合了 `redux`、`redux-thunk`、`react-redux` 的简单 js 库，使用方式类似 `vuex`。
 
