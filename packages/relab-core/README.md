@@ -76,12 +76,12 @@ export default {
 };
 ```
 
-注意：
+#### 注意：
 
 > 1. `effects` 里面可以进行异步操作（如请求数据等），异步操作必须使用 `promise` 或 `async` 语法，使用 `promise` 时，必须返回 `promise` 对象。
 > 2. `effects` 里面声明的函数参数个数不限定，第一个参数固定为对象 `{ commit, select, dispatch }`，其他参数由调用 `effect` 函数时传入。
 
-参数说明：
+#### 参数说明：
 
 1. `commit`：调用 `reducer` 函数，支持两个参数，第一个参数为 `reducers` 里面声明的函数名，第二个参数为 `payload`，即 `reducer` 函数的第二个参数。
 
@@ -161,14 +161,14 @@ import React, { PureComponent } from "react";
 import { getStore } from "@relabjs/core";
 
 class Layout extends PureComponent {
-  logout(){
+  logout() {
     // 调用 getStore() 可以得到 `store` 对象
     getStore().reset();
   }
 }
+```
 
 > 说明：`store` 的 `reset` 方法可以传入一个 `namespace` 的值作为参数来重置指定模块的状态数据，不传或传入不合法的参数时重置所有状态数据。
-```
 
 ## 其他
 
