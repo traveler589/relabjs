@@ -32,7 +32,7 @@ ReactDOM.render(
 );
 ```
 
-### 模块 `model.js` 文件：
+### 模块 `model` 文件：
 
 ```js
 export default {
@@ -129,7 +129,7 @@ import model from "./model";
 @relab(model)
 export default class Home extends PureComponent {
   componentDidMount() {
-    // 此处 pull 为定义在 `effects` 里面的函数
+    // 此处 pull 为定义在 `effects` 里面的同名函数
     const { pull } = this.props;
 
     // 获取数据
@@ -138,6 +138,10 @@ export default class Home extends PureComponent {
   render() {
     // 模块的状态数据被注入到名称为 `model` 的属性对象里。
     const { list, offset, loading } = this.props.model;
+
+    if (loading.length) {
+      return <p>正在载入...</p>;
+    }
 
     return (
       <ul>
