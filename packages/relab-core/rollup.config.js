@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     resolve(),
     babel({
+      babelrc: false,
       exclude: "node_modules/**"
     })
   ],

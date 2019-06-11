@@ -31,6 +31,5 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
-  },
-  "gitHead": "5e48ae9740f3754428d290c37d71dab604ee3cc1"
+  }
 }
