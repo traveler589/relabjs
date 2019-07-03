@@ -1,6 +1,7 @@
 .idea/
 .vscode/
 **/dist
+**/es
 node_modules/
 build
 .DS_Store
