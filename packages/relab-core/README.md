@@ -173,7 +173,6 @@ import React, { lazy, Suspense } from "react";
 import { Route, Router, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
 import Loading from "@/loading";
-import routes from "router";
 import relab, { store } from "@relabjs/core";
 import model from "./model";
 
@@ -242,34 +241,34 @@ export default class Home extends PureComponent {
 ### 组件内触发或获取状态：
 
 ```js
-import { store } from '@relabjs/core
+import { store } from "@relabjs/core";
 
 // 触发指定model的effect函数
-store.dispatch('home/pull', { id: 1 });
+store.dispatch("home/pull", { id: 1 });
 // 或者
 store.dispatch({
-  type: 'home/pull',
+  type: "home/pull",
   id: 1
 });
 
 // 触发全局model的effect函数
-store.dispatch('pull', { id: 1 });
+store.dispatch("pull", { id: 1 });
 // 或者
 store.dispatch({
-  type: 'pull',
+  type: "pull",
   id: 1
 });
 
 // 获取指定model的状态
-store.getState('home')
+store.getState("home");
 // 或者
-store.getState().home
+store.getState().home;
 
 // 获取所有的状态数据
-store.getState()
+store.getState();
 
 // 获取全局model的状态数据
-store.getState('$global')
+store.getState("$global");
 ```
 
 ### 重置状态数据
