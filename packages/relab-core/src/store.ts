@@ -120,8 +120,6 @@ export const getAction = (
 
     const { type, ...payload } = action;
 
-    console.log(type, payload);
-
     return select(type, payload, rest);
   }
 
