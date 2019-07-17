@@ -21,14 +21,10 @@ export default function relab<T>(model: RelabModel<T>) {
 
     return connect(
       (state: RelabStoreState) =>
-        global
-          ? {}
-          : createStructuredSelector<RelabStoreState, any>({
-              model: (o: RelabStoreState) => o[namespace]
-            })(state),
-      global
-        ? () => {}
-        : (dispatch: Dispatch) => bindActionCreators(action, dispatch)
+        createStructuredSelector<RelabStoreState, any>({
+          model: (o: RelabStoreState) => o[namespace]
+        })(state),
+      (dispatch: Dispatch) => bindActionCreators(action, dispatch)
     );
   } catch (err) {
     console.error(err);
