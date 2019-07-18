@@ -9,7 +9,12 @@ import {
 import thunk from "redux-thunk";
 import config from "./config";
 import prefix from "./prefix";
-import { RelabAction, RelabActionOption, RelabActionConfig } from "../index.d";
+import {
+  RelabStore,
+  RelabAction,
+  RelabActionOption,
+  RelabActionConfig
+} from "../index.d";
 
 let store: Store | null = null;
 const actions: Record<string, any> = {};
@@ -164,14 +169,14 @@ export const initStore = (initState = {}) => {
   return store;
 };
 
-export const customStore = {
+export const customStore: RelabStore = {
+  getState,
   reset: resetStore,
-  getState: getState,
   dispatch(action: RelabActionConfig | string, payload?: any) {
     if (!store) {
       throw new Error("The store has not yet been initialized!");
     }
 
-    return store.dispatch(getAction(action, payload));
+    store.dispatch(getAction(action, payload));
   }
 };

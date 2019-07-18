@@ -28,6 +28,15 @@ export type RelabStoreState = {
 };
 
 /**
+ * 自定義store對象
+ */
+export type RelabStore = {
+  reset: (namespace?: string) => void;
+  getState: (namespace?: string) => RelabState | RelabStoreState;
+  dispatch: (action: RelabActionConfig | string, payload?: any) => void;
+};
+
+/**
  * 獲取狀態的函數
  */
 interface RelabSelector {
@@ -147,7 +156,7 @@ declare global {
   }
 }
 
-export const store: Store;
+export const store: RelabStore;
 
 export function initStore(state?: RelabStoreState): Store;
 
