@@ -1,6 +1,6 @@
 {
   "name": "@relabjs/core",
-  "version": "0.0.3",
+  "version": "0.0.2",
   "description": "relab-core",
   "keywords": [
     "relabjs"
@@ -35,6 +35,5 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0"
-  },
-  "gitHead": "b82ea4a76cd0966e739f475961f84822b446b62f"
+  }
 }
