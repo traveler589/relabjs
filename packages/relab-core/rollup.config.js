@@ -17,18 +17,21 @@ const config = {
 
 module.exports = [
   // commonjs
-  Object.assign(config, {
+  {
+    ...config,
     output: {
       file: "dist/index.js",
-      format: "cjs"
+      format: "cjs",
+      exports: "named"
     }
-  }),
+  },
   // ES
-  Object.assign(config, {
+  {
+    ...config,
     output: {
       file: "es/index.js",
       format: "es",
       exports: "named"
     }
-  })
+  }
 ];

@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "build": "lerna run build",
-    "push": "lerna publish --skip-git",
+    "commit": "lerna version --conventional-commits --no-push",
+    "push": "lerna publish --no-git-tag-version --no-push",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
   },
   "devDependencies": {
