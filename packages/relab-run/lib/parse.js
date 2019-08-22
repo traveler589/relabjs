@@ -11,7 +11,7 @@ module.exports = cwd => {
 
   const { name, version } = require("../package.json");
 
-  // 查看版本号
+  // 查看node/chrome/electron版本号
   if (command === "-V") {
     const { node, chrome, electron } = process.versions;
     const coll = [name, "node", "chrome", "electron"];
@@ -26,10 +26,14 @@ module.exports = cwd => {
     console.log("electron".padEnd(size, " "), electron);
 
     config.version = true;
-  } else if (command === "-v") {
+  }
+  // 查看当前项目版本号
+  else if (command === "-v") {
     console.log(`${name} ${version}`);
     config.version = true;
-  } else {
+  }
+  // 其他情况视为入口文件
+  else {
     config.entry = path.isAbsolute(command)
       ? command
       : path.resolve(cwd, command);
