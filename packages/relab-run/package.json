@@ -1,0 +1,14 @@
+{
+  "name": "@relabjs/run",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "author": "L",
+  "bin": {
+    "run": "./bin/index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.0.2",
+    "electron": "^6.0.3"
+  }
+}
